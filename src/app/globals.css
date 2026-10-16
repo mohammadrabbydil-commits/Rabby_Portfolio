@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens. Warm paper + ink with a single vermilion accent, chosen to
+ * sit well next to the black-and-white portrait. Measured WCAG contrast:
+ *   ink on paper 16.6:1, muted and accent on paper 5.8:1 (5.2:1 on paper-deep),
+ *   accent-light on ink 9.1:1, paper at 60% opacity on ink 6.5:1.
+ *   Every pairing used for text passes AA (4.5:1).
+ */
+@theme {
+  --color-paper: #f5f3ee;
+  --color-paper-deep: #ebe7de;
+  --color-card: #fbfaf7;
+  --color-ink: #121417;
+  --color-ink-soft: #24272d;
+  --color-muted: #5a5f68;
+  --color-rule: #d9d4c9;
+  --color-accent: #a63a1c;
+  --color-accent-light: #eba786;
+
+  --animate-rise: rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+/* Font families come from next/font CSS variables set on <html>. */
+@theme inline {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+  --font-display: var(--font-instrument-serif), Georgia, "Times New Roman", serif;
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Keep anchored sections clear of the sticky header. */
+  [id] {
+    scroll-margin-top: 5.5rem;
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-paper);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
