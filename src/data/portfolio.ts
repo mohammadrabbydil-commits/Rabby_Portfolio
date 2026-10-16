@@ -369,5 +369,4 @@ export const achievements: Achievement[] = [
 export const spokenLanguages: SpokenLanguage[] = [
   { name: "Bengali", level: "Native" },
   { name: "English", level: "Professional working proficiency" },
-  { name: "Korean", level: "Basic — currently learning" },
 ];
