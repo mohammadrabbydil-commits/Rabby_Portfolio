@@ -3,8 +3,10 @@ import Image from "next/image";
 
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Container } from "@/components/ui/Container";
-import { ExternalLink } from "@/components/ui/ExternalLink";
-import { highlights, profile, socialLinks } from "@/data/portfolio";
+import { AnimatedNumber } from "@/components/ui/AnimatedNumber";
+import { SocialLinks } from "@/components/ui/SocialLinks";
+import { TiltFrame } from "@/components/ui/TiltFrame";
+import { highlights, profile } from "@/data/portfolio";
 import { cn } from "@/lib/utils";
 
 /**
@@ -13,7 +15,19 @@ import { cn } from "@/lib/utils";
  */
 export function Hero() {
   return (
-    <section id="top" aria-labelledby="hero-heading" className="pt-28 pb-4 sm:pt-36 sm:pb-8">
+    <section
+      id="top"
+      aria-labelledby="hero-heading"
+      className="relative overflow-hidden pt-28 pb-4 sm:pt-36 sm:pb-8"
+    >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_1px_1px,rgba(18,20,23,0.12)_1px,transparent_0)] [mask-image:radial-gradient(ellipse_75%_70%_at_75%_30%,black,transparent)] bg-[size:26px_26px]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-24 right-[-8rem] -z-10 size-[34rem] rounded-full bg-accent/10 blur-3xl"
+      />
       <Container>
         <div className="grid items-end gap-12 lg:grid-cols-[1fr_auto] lg:gap-16">
           <div className="animate-rise">
@@ -61,35 +75,26 @@ export function Hero() {
               </ButtonLink>
             </div>
 
-            <ul
-              aria-label="Profiles"
-              className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted"
-            >
-              {socialLinks.map((link) => (
-                <li key={link.label}>
-                  <ExternalLink href={link.href} className="hover:text-ink">
-                    {link.label}
-                  </ExternalLink>
-                </li>
-              ))}
-            </ul>
+            <SocialLinks label="Profiles" className="mt-8" />
           </div>
 
           <figure className="mx-auto w-full max-w-[18rem] animate-rise [animation-delay:120ms] sm:max-w-[20rem] lg:mx-0 lg:w-[20rem]">
-            <div className="rounded-sm border border-rule bg-card p-3 shadow-[0_1px_0_rgba(18,20,23,0.04),0_24px_48px_-28px_rgba(18,20,23,0.35)]">
-              <div className="relative aspect-[4/5] overflow-hidden bg-white">
-                <Image
-                  src={profile.photo.src}
-                  alt={profile.photo.alt}
-                  fill
-                  sizes="(min-width: 640px) 320px, 288px"
-                  loading="eager"
-                  fetchPriority="high"
-                  className="object-cover"
-                  style={{ objectPosition: profile.photo.objectPosition }}
-                />
+            <TiltFrame>
+              <div className="rounded-sm border border-rule bg-card p-3 shadow-[0_1px_0_rgba(18,20,23,0.04),0_24px_48px_-28px_rgba(18,20,23,0.35)]">
+                <div className="relative aspect-[4/5] overflow-hidden bg-white">
+                  <Image
+                    src={profile.photo.src}
+                    alt={profile.photo.alt}
+                    fill
+                    sizes="(min-width: 640px) 320px, 288px"
+                    loading="eager"
+                    fetchPriority="high"
+                    className="object-cover"
+                    style={{ objectPosition: profile.photo.objectPosition }}
+                  />
+                </div>
               </div>
-            </div>
+            </TiltFrame>
             <figcaption className="mt-3 flex justify-between font-mono text-[0.6875rem] tracking-[0.14em] text-muted uppercase">
               <span>Fig. 01</span>
               <span>{profile.name}</span>
@@ -110,7 +115,7 @@ export function Hero() {
             >
               <dt className="mt-3 max-w-[16rem] text-sm leading-snug text-muted">{item.label}</dt>
               <dd className="font-display text-4xl leading-none tracking-tight sm:text-5xl">
-                {item.value}
+                <AnimatedNumber value={item.value} />
               </dd>
             </div>
           ))}

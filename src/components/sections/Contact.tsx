@@ -3,9 +3,9 @@ import { Download, Mail, MapPin } from "lucide-react";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Container } from "@/components/ui/Container";
 import { CopyEmailButton } from "@/components/ui/CopyEmailButton";
-import { ExternalLink } from "@/components/ui/ExternalLink";
 import { Reveal } from "@/components/ui/Reveal";
-import { profile, socialLinks } from "@/data/portfolio";
+import { SocialLinks } from "@/components/ui/SocialLinks";
+import { profile } from "@/data/portfolio";
 
 /**
  * Contact uses email links rather than a form: there is no configured
@@ -80,15 +80,7 @@ export function Contact() {
                 <h3 className="font-mono text-xs tracking-[0.18em] text-paper/60 uppercase">
                   Elsewhere
                 </h3>
-                <ul className="mt-3 grid grid-cols-2 gap-x-8 gap-y-2 sm:flex sm:flex-wrap">
-                  {socialLinks.map((link) => (
-                    <li key={link.label}>
-                      <ExternalLink href={link.href} className="hover:text-accent-light">
-                        {link.label}
-                      </ExternalLink>
-                    </li>
-                  ))}
-                </ul>
+                <SocialLinks tone="dark" label="Profiles" className="mt-3" />
               </div>
             </div>
           </Reveal>

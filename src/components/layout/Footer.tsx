@@ -1,3 +1,4 @@
+import { BrandIcon } from "@/components/ui/BrandIcon";
 import { Container } from "@/components/ui/Container";
 import { CurrentYear } from "@/components/ui/CurrentYear";
 import { ExternalLink } from "@/components/ui/ExternalLink";
@@ -16,6 +17,7 @@ export function Footer() {
               {socialLinks.map((link) => (
                 <li key={link.label}>
                   <ExternalLink href={link.href} className="hover:text-paper">
+                    <BrandIcon name={link.label} className="size-3.5" />
                     {link.label}
                   </ExternalLink>
                 </li>

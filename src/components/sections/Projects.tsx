@@ -3,6 +3,7 @@ import Image from "next/image";
 
 import { ExternalLink } from "@/components/ui/ExternalLink";
 import { Reveal } from "@/components/ui/Reveal";
+import { Spotlight } from "@/components/ui/Spotlight";
 import { Section } from "@/components/ui/Section";
 import { TagList } from "@/components/ui/Tag";
 import { projects, socialLinks } from "@/data/portfolio";
@@ -109,7 +110,9 @@ export function Projects() {
             key={project.title}
             className="border-t border-rule py-12 first:border-t-0 first:pt-0 last:pb-0"
           >
-            <ProjectEntry project={project} index={index} />
+            <Spotlight className="-mx-4 rounded-sm px-4 py-2 sm:-mx-6 sm:px-6">
+              <ProjectEntry project={project} index={index} />
+            </Spotlight>
           </li>
         ))}
       </ol>
