@@ -44,6 +44,8 @@ export interface SocialLink {
   href: string;
   /** Short handle shown next to the label. */
   handle: string;
+  /** Brand whose logo to show when it differs from `label`, e.g. "GitHub". */
+  brand?: string;
 }
 
 export interface Highlight {

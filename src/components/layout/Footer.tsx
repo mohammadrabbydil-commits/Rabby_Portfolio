@@ -17,7 +17,7 @@ export function Footer() {
               {socialLinks.map((link) => (
                 <li key={link.label}>
                   <ExternalLink href={link.href} className="hover:text-paper">
-                    <BrandIcon name={link.label} className="size-3.5" />
+                    <BrandIcon name={link.brand ?? link.label} className="size-3.5" />
                     {link.label}
                   </ExternalLink>
                 </li>

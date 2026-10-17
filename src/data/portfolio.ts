@@ -65,6 +65,12 @@ export const socialLinks: SocialLink[] = [
     handle: "rabbyece10",
   },
   {
+    label: "GitHub Projects",
+    href: "https://github.com/mohammadrabbydil-commits",
+    handle: "mohammadrabbydil-commits",
+    brand: "GitHub",
+  },
+  {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/mohammad-rabby-6801aa1ba/",
     handle: "mohammad-rabby",
@@ -201,6 +207,48 @@ export const projects: Project[] = [
       kind: "github",
       href: "https://github.com/rabbyece10/Edge-AI-Blind-Assist-System-Computer-Vision-",
     },
+  },
+  {
+    title: "Lumora — Real-Time Emotion Detection for HR",
+    year: "2026",
+    summary:
+      "A privacy-first sentiment platform that gives HR real-time insight into employee well-being using a Vision Transformer, with models running locally.",
+    highlights: [
+      "Vision Transformer (Hugging Face, PyTorch) classifies facial expressions into emotional states from in-memory images, without persistent video streams.",
+      "FastAPI backend with RESTful endpoints and SQLAlchemy on SQLite; the model runs locally to keep data private.",
+      "React and Vite front end with role-based access: an HR dashboard and an employee camera portal.",
+    ],
+    stack: ["Python", "FastAPI", "PyTorch", "Transformers", "React", "SQLite"],
+    link: { kind: "github", href: "https://github.com/mohammadrabbydil-commits/Lumora" },
+  },
+  {
+    title: "Grocery Price Comparison Backend",
+    year: "2026",
+    summary:
+      "A backend for comparing grocery prices across four Dutch supermarkets: Albert Heijn, Jumbo, Lidl and DekaMarkt.",
+    highlights: [
+      "Per-store scrapers feed a PostgreSQL database, refreshed by a scheduled daily job.",
+      "Product-matching engine combining EAN barcodes with fuzzy text matching to line up equivalent products across stores.",
+      "Lightweight HTTP API with admin and customer authentication, structured logging, and a test suite; delivered in milestones.",
+    ],
+    stack: ["Node.js", "PostgreSQL", "REST API", "Web Scraping", "Winston"],
+    link: {
+      kind: "github",
+      href: "https://github.com/mohammadrabbydil-commits/eerlijke-boodschappen",
+    },
+  },
+  {
+    title: "Yoga Studio Management System",
+    year: "2025",
+    summary:
+      "A full-stack web app for running a yoga studio: classes, tutors, locations and bookings in one place.",
+    highlights: [
+      "Node.js and Express REST API on MongoDB covering authentication, bookings, classes, tutors, locations, notifications and reports.",
+      "JWT authentication with role-based access control and request-validation middleware.",
+      "React and Vite front end, with a database seeder for quick local setup.",
+    ],
+    stack: ["React", "Node.js", "Express", "MongoDB", "JWT"],
+    link: { kind: "github", href: "https://github.com/mohammadrabbydil-commits/yoga_management" },
   },
   {
     title: "Stock Market Forecasting with Time-Series Data",

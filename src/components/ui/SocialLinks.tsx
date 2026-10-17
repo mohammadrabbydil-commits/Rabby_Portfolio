@@ -31,7 +31,7 @@ export function SocialLinks({ tone = "light", label, className }: SocialLinksPro
               tones[tone],
             )}
           >
-            <BrandIcon name={link.label} className="size-[1.0625rem]" />
+            <BrandIcon name={link.brand ?? link.label} className="size-[1.0625rem]" />
             {link.label}
             <ArrowUpRight
               aria-hidden="true"
