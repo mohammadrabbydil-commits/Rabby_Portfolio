@@ -1,3 +1,4 @@
+import { Certificates } from "@/components/sections/Certificates";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
 import { certifications, education } from "@/data/portfolio";
@@ -40,24 +41,8 @@ export function Education() {
         ))}
 
         {certifications.length > 0 ? (
-          <Reveal className="grid gap-4 lg:grid-cols-[13rem_1fr] lg:gap-10">
-            <h3 className="font-mono text-xs tracking-[0.18em] text-muted uppercase lg:pt-1">
-              Certifications
-            </h3>
-            <ul className="grid max-w-3xl gap-3 sm:grid-cols-2">
-              {certifications.map((cert) => (
-                <li
-                  key={cert.name}
-                  className="flex flex-col justify-between gap-4 rounded-sm border border-rule bg-card p-5"
-                >
-                  <p className="leading-snug font-medium">{cert.name}</p>
-                  <p className="flex items-center justify-between font-mono text-xs text-muted">
-                    <span>{cert.issuer ?? ""}</span>
-                    <span>{cert.year}</span>
-                  </p>
-                </li>
-              ))}
-            </ul>
+          <Reveal>
+            <Certificates />
           </Reveal>
         ) : null}
       </div>

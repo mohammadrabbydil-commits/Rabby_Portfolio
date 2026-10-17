@@ -107,7 +107,16 @@ export interface EducationItem {
 export interface Certification {
   name: string;
   issuer?: string;
+  /** Platform that delivered the course, e.g. "Coursera". */
+  platform?: string;
+  /** Completion date as shown on the certificate, e.g. "Aug 2025". */
+  date: string;
+  /** Four-digit year, used for sorting. */
   year: string;
+  /** Path under /public to the certificate PDF, e.g. "/certificates/agile.pdf". */
+  file?: string;
+  /** Public verification page for the credential. */
+  verifyUrl?: string;
 }
 
 export interface Achievement {
