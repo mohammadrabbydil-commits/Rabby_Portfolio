@@ -1,4 +1,4 @@
-import { Download, Mail, MapPin } from "lucide-react";
+import { Download, Mail, MapPin, Phone } from "lucide-react";
 
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Container } from "@/components/ui/Container";
@@ -53,6 +53,14 @@ export function Contact() {
                 <Mail aria-hidden="true" className="size-4" />
                 Email me
               </ButtonLink>
+              <ButtonLink
+                href={`tel:${profile.phone.tel}`}
+                variant="inverse-outline"
+                className="py-2"
+              >
+                <Phone aria-hidden="true" className="size-4" />
+                Call me
+              </ButtonLink>
               <CopyEmailButton email={profile.email} />
               <ButtonLink
                 href={profile.resume.href}
@@ -66,7 +74,7 @@ export function Contact() {
               </ButtonLink>
             </div>
 
-            <div className="mt-14 grid gap-8 border-t border-paper/15 pt-8 sm:grid-cols-[auto_1fr] sm:gap-16">
+            <div className="mt-14 grid gap-8 border-t border-paper/15 pt-8 sm:grid-cols-[auto_auto_1fr] sm:gap-12">
               <div>
                 <h3 className="font-mono text-xs tracking-[0.18em] text-paper/60 uppercase">
                   Based in
@@ -74,6 +82,20 @@ export function Contact() {
                 <p className="mt-3 inline-flex items-center gap-2">
                   <MapPin aria-hidden="true" className="size-4 text-accent-light" />
                   {profile.location}
+                </p>
+              </div>
+              <div>
+                <h3 className="font-mono text-xs tracking-[0.18em] text-paper/60 uppercase">
+                  Phone
+                </h3>
+                <p className="mt-3">
+                  <a
+                    href={`tel:${profile.phone.tel}`}
+                    className="inline-flex items-center gap-2 underline decoration-paper/30 underline-offset-4 transition-colors hover:text-accent-light hover:decoration-accent-light"
+                  >
+                    <Phone aria-hidden="true" className="size-4 text-accent-light" />
+                    {profile.phone.display}
+                  </a>
                 </p>
               </div>
               <div>

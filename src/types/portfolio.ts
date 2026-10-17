@@ -28,6 +28,8 @@ export interface Profile {
   title: string;
   location: string;
   email: string;
+  /** Phone number: `display` is shown on the page, `tel` is the dialable E.164 form. */
+  phone: { display: string; tel: string };
   /** Hero statement, split so the emphasised part can be styled. */
   headline: { lead: string; emphasis: string };
   intro: string;

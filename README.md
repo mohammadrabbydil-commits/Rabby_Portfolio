@@ -122,7 +122,7 @@ active-section highlight), `Reveal` (scroll animations), `CopyEmailButton` (clip
 - **Contact:** email link plus a copy-to-clipboard button. There is deliberately no contact form,
   because no submission backend is configured and a form that silently discarded messages would
   be worse than none.
-- **Phone number:** shown in the downloadable PDF but not printed on the page, to limit scraping.
+- **Phone number:** shown in the Contact section with a tap-to-call link. Edit `profile.phone` in `src/data/portfolio.ts`; delete that field (and its two uses in `Contact.tsx`) to hide it.
 
 ## Deployment
 

@@ -26,6 +26,7 @@ export const profile: Profile = {
   title: "AI Engineer & Data Engineer",
   location: "Dhaka, Bangladesh",
   email: "mdrabbyu70@gmail.com",
+  phone: { display: "+880 1888-586784", tel: "+8801888586784" },
   headline: {
     lead: "I turn real business problems into",
     emphasis: "production-ready AI and data systems.",
