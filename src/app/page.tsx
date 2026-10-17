@@ -21,6 +21,7 @@ function buildPersonJsonLd() {
     name: profile.name,
     jobTitle: profile.title,
     email: `mailto:${profile.email}`,
+    telephone: profile.phone.tel,
     address: {
       "@type": "PostalAddress",
       addressLocality: "Dhaka",
